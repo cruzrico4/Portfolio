@@ -31,6 +31,10 @@ body {
   background-color: var(--prm-color)
 }
 
+.bannerImage {
+  width:100%;
+}
+
 .bannerTitle {
   /*font-family:comfortaa;*/
   position: absolute;
@@ -61,7 +65,8 @@ body {
   position: sticky;
   top:0px;
   display: inline-flex;
-  height:50;
+  vertical-align: top;
+  height:1vh;
   width:100%;
   overflow: visible;
   background-color: rgba(0,0,0,0);
@@ -73,7 +78,7 @@ body {
   flex-basis:100%;
   top:0px;
   align-self:flex-start;
-  position: relative;
+  position: sticky;
   box-sizing: border-box;
   border-style:solid;
   border-color:black;
@@ -87,8 +92,9 @@ body {
 }
 
 .pfNavElement:hover{
+  position: sticky;
+
   height:300px;
-  z-index: 1;
 }
 
 .navTitle {
