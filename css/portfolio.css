@@ -1,0 +1,119 @@
+:root {
+  --pg-color:black;
+  --prm-color:#398494;
+  --sec-color:yellow;
+  --ter-color:purple;
+  --txt-color:white;
+}
+
+@font-face {
+  font-family:"comfortaa";
+  src:url('../fonts/comfortaa/Comfortaa-Bold.ttf');
+}
+
+html {
+  font-family:serif;
+  height:100%;
+  background-color:black;
+}
+
+body {
+  height:100%;
+  background-color: var(--pg-color);
+  overflow-y:auto;
+}
+
+.pfBanner {
+  display:block;
+  overflow:hidden;
+  height:200px;
+  width:100%;
+  background-color: var(--prm-color)
+}
+
+.bannerTitle {
+  /*font-family:comfortaa;*/
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  font-size:40pt;
+  text-align: center;
+  color:var(--txt-color);
+  text-shadow: 0px 0px 2px black;
+  top:5px;
+  margin: 10px;
+  z-index: 1;
+}
+
+.bannerSubtitle {
+  position:absolute;
+  top: 80px;
+  display: block;
+  pointer-events: none;
+  font-size:36pt;
+  text-align: center;
+  color:var(--txt-color);
+  text-shadow: 0px 0px 2px black;
+  margin: 10px;
+}
+
+.pfNavBar {
+  position: sticky;
+  top:0px;
+  display: inline-flex;
+  height:50;
+  width:100%;
+  overflow: visible;
+  background-color: rgba(0,0,0,0);
+  transition:0.2s;
+}
+
+.pfNavElement {
+  cursor:pointer;
+  flex-basis:100%;
+  top:0px;
+  align-self:flex-start;
+  position: relative;
+  box-sizing: border-box;
+  border-style:solid;
+  border-color:black;
+  border-width:1px;
+  height:80px;
+  text-align:center;
+  vertical-align: top;
+  overflow:hidden;
+  background-color: rgba(0,0,0,0);
+  transition:.2s;
+}
+
+.pfNavElement:hover{
+  height:300px;
+  z-index: 1;
+}
+
+.navTitle {
+  /*font-family:comfortaa;*/
+  position:absolute;
+  display: block;
+  pointer-events: none;
+  font-size:24pt;
+  text-align: center;
+  color:var(--txt-color);
+  text-shadow: 0px 0px 2px black;
+  top:5px;
+  margin-left: 10px;
+  z-index: 1;
+}
+
+.navImage {
+  position:relative;
+  filter:opacity(30%);
+  width: 100%;
+  align-items: flex-start;
+}
+
+.navImage:hover{
+  filter:opacity(100%);
+  object-fit: cover;
+  height: 100%
+}
