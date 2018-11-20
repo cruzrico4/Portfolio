@@ -1,9 +1,13 @@
 :root {
   --pg-color:black;
-  --prm-color:#398494;
+  --prm-color:white;
   --sec-color:yellow;
   --ter-color:purple;
   --txt-color:white;
+  --people;
+  --places;
+  --animals;
+  --things;
 }
 
 @font-face {
@@ -13,12 +17,10 @@
 
 html {
   font-family:serif;
-  height:100%;
-  background-color:black;
 }
 
 body {
-  height:5000px;
+  height:3000px;
   background-color: var(--pg-color);
   overflow-y:auto;
 }
@@ -28,25 +30,24 @@ body {
   overflow:hidden;
   height:200px;
   width:100%;
-  background-color: var(--prm-color)
 }
 
 .bannerImage {
   width:100%;
+  z-index: 0;
 }
 
 .bannerTitle {
   /*font-family:comfortaa;*/
   position: absolute;
-  display: block;
   pointer-events: none;
   font-size:40pt;
   text-align: center;
   color:var(--txt-color);
-  text-shadow: 0px 0px 1px black;
-  top:5px;
+  text-shadow: 0px 0px 2px black;
+  top:20px;
   margin: 10px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .bannerSubtitle {
@@ -54,7 +55,7 @@ body {
   top: 80px;
   display: block;
   pointer-events: none;
-  font-size:36pt;
+  font-size:30pt;
   text-align: center;
   color:var(--txt-color);
   text-shadow: 0px 0px 2px black;
@@ -69,8 +70,25 @@ body {
   height:1vh;
   width:100%;
   overflow: visible;
-  background-color: rgba(0,0,0,0);
   transition:0.2s;
+}
+
+
+
+ #navElement1 {
+    background-image: url("https://images.unsplash.com/photo-1514626585111-9aa86183ac98?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=03cd3fb1b6738fa69c358d927f890461&w=1000&q=80");
+}
+
+ #navElement2 {
+    background-image: url("https://www.glenstone.org/wp-content/uploads/2018/07/AV_Landscape-Hero-Contour-2993-1276x800.jpg");
+}
+
+ #navElement3 {
+    background-image: url("https://www.rspcansw.org.au/wp-content/uploads/2017/04/7_a-feature_adopt_mobile-1.jpg");
+}
+
+ #navElement4 {
+    background-image: url("http://maxsukhomlin.com/wp-content/uploads/2016/09/object_photography_watches_16_MaxSukhomlin.com_.jpg");
 }
 
 .pfNavElement {
@@ -78,66 +96,67 @@ body {
   flex-basis:100%;
   top:0px;
   align-self:flex-start;
-  align-items:center;
   position: relative;
   height:80px;
-  text-align:center;
   vertical-align: top;
   overflow:hidden;
-  background-color: rgba(0,0,0,0);
+  border: 1px black solid;
   transition:.2s;
-  z-index:1
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
+.pfNavElement:before {
+  content: ' ';
+  z-index:1;
+  left:0;
+  top:0;
+  display:block;
+  position:absolute;
+  height:100%;
+  width:100%;
+  opacity:.7;
+  background:black;
+  transition:.2s;
+}
 .pfNavElement:hover {
   height:300px;
-  border-right: 1px black solid;
+}
+.pfNavElement:hover:before{
+  opacity:0;
 }
 
 .navTitle {
   /*font-family:comfortaa;*/
-  position:absolute;
+  position:relative;
   display: block;
-  pointer-events: none;
-  font-size: 24pt;
+  top:0;
+  font-size: 30pt;
+  vertical-align: center;
   text-align: center;
   color:var(--txt-color);
-  text-shadow: 0px 0px 1px black;
-  top:5px;
+  text-shadow: 0px 0px 2px black;
   margin-left: 10px;
-  z-index: 1;
-}
-
-.navImage {
-  position:relative;
-  filter:opacity(30%);
-  object-fit:cover;
-  min-width: 100%;
-  max-width:120%;
-  align-items: flex-start;
-  box-sizing: border-box;
-  border-style:solid;
-  border-color:black;
-  border-width:1px;
-
-}
-
-.navImage:hover{
-  filter:opacity(100%);
-  object-fit: cover;
-  height: 100%
+  z-index: 2;
 }
 
 .page {
-  height:5000px;
+  height:100%;
   width:100%;
   top:1px;
   display:flex;
 }
+
 .top_arrow {
-  height:25px;
-  width:25px;
+  pointer-events: none;
+  cursor: pointer;
+  height:15vw;
+  width:15vw;
+  max-height:80px;
+  max-width:80px;
   position:sticky;
-  align-self: flex-end;
-  bottom:1em;
+  align-self: center;
+  bottom:1px;
+  transition: .2s;
 }
