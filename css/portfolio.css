@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  height:100%;
+  height:5000px;
   background-color: var(--pg-color);
   overflow-y:auto;
 }
@@ -43,7 +43,7 @@ body {
   font-size:40pt;
   text-align: center;
   color:var(--txt-color);
-  text-shadow: 0px 0px 2px black;
+  text-shadow: 0px 0px 1px black;
   top:5px;
   margin: 10px;
   z-index: 1;
@@ -78,23 +78,20 @@ body {
   flex-basis:100%;
   top:0px;
   align-self:flex-start;
-  position: sticky;
-  box-sizing: border-box;
-  border-style:solid;
-  border-color:black;
-  border-width:1px;
+  align-items:center;
+  position: relative;
   height:80px;
   text-align:center;
   vertical-align: top;
   overflow:hidden;
   background-color: rgba(0,0,0,0);
   transition:.2s;
+  z-index:1
 }
 
-.pfNavElement:hover{
-  position: sticky;
-
+.pfNavElement:hover {
   height:300px;
+  border-right: 1px black solid;
 }
 
 .navTitle {
@@ -102,10 +99,10 @@ body {
   position:absolute;
   display: block;
   pointer-events: none;
-  font-size:24pt;
+  font-size: 24pt;
   text-align: center;
   color:var(--txt-color);
-  text-shadow: 0px 0px 2px black;
+  text-shadow: 0px 0px 1px black;
   top:5px;
   margin-left: 10px;
   z-index: 1;
@@ -114,12 +111,33 @@ body {
 .navImage {
   position:relative;
   filter:opacity(30%);
-  width: 100%;
+  object-fit:cover;
+  min-width: 100%;
+  max-width:120%;
   align-items: flex-start;
+  box-sizing: border-box;
+  border-style:solid;
+  border-color:black;
+  border-width:1px;
+
 }
 
 .navImage:hover{
   filter:opacity(100%);
   object-fit: cover;
   height: 100%
+}
+
+.page {
+  height:5000px;
+  width:100%;
+  top:1px;
+  display:flex;
+}
+.top_arrow {
+  height:25px;
+  width:25px;
+  position:sticky;
+  align-self: flex-end;
+  bottom:1em;
 }
