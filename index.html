@@ -2,57 +2,179 @@
 <html>
 
 <head>
+  <link rel="icon" href="C:\Users\Cruz\Desktop\Portfolio\images\JCR.png" style="height:64px; width:100%">
   <link rel="stylesheet" href="css/portfolio.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cruz Rico - Portfolio Home</title>
 </head>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="js/portfolio.js"></script>
+
 <body>
+
+    <!-- NAVBAR HTML -->
+    <!-- <div id="pfNavBar" class="pfNavBar">
+      <div id="navElement1" class="pfNavElement" onclick="window.location.assign('html/apps.html')">
+        <h1 id=navTitle1 class="navTitle">
+          Web and Apps
+        </h1>
+        <ul class="navList">
+          Gymtel (Fall 2018)
+        </ul
+        <ul class="navList">
+          Newsflash (Winter 2018)
+        </ul
+        <ul class="navList">
+          Parking Fine (Spring 2019)
+        </ul
+      </div>
+      <div id="navElement2" class="pfNavElement" onclick="window.location.assign('html/photography.html')">
+        <h1 id=navTitle2 class="navTitle">
+          Photography
+        </h1>
+        <p class="navList">
+          A collection of my favorite photos I've taken
+        </p>
+      </div>
+      <div id="navElement3" class="pfNavElement">
+        <h1 id=navTitle3 class="navTitle">
+          Graphic Design
+        </h1>
+      </div>
+    </div> -->
+
+    <!-- END NAVBAR HTML -->
+
+
+
+  <!-- MAIN PAGE HTML -->
+
+  <div id="drawer">
+    <div id="listContainer" class="listContainer">
+      <h3 class="sectionTitle listTitle">
+        // My Projects
+      </h3>
+      <div class="closeBox">
+        <h3 class="close">
+          &times;
+        </h3>
+      </div>
+      <ul id="LI1" class="listButton"> </ul>
+      <ul id="LI2" class="listButton"> </ul>
+      <ul id="LI3" class="listButton"> </ul>
+
+    </div>
+  </div>
+
+  <div class="menuIconContainer">
+    <span class="helper"></span>
+    <div class="iconContainer">
+      <img class="menuIcon" src='C:\Users\Cruz\Desktop\Portfolio\images\menu_icon.png'></img>
+    </div>
+    <div class="tipContainer">
+      <h1 class="menuTip">View My Projects!</h1>
+    </div>
+  </div>
+
+
+
   <a name="top"></a>
+
   <div id="pfBanner" class="pfBanner">
-    <img id="bannerImage" class="bannerImage" src="https://images.wallpaperscraft.com/image/landscape_nature_hills_trees_foliage_fog_sunrise_sun_81136_3840x2400.jpg"/img>
-    <h1 id="bannerTitle" class="bannerTitle">
-      Cruz Rico
-    </h1>
-    <h2 id="bannerSubtitle" class="bannerSubtitle">
-      Design Portfolio
+    <image id="bannerImage" class= "bannerImage" src="C:\Users\Cruz\Desktop\Portfolio\images\code_img.png"></image>
+  </div>
+  <div id="bannerWords">
+    <h2 id="bannerTitle" class="bannerTitle">
+      Joseph Cruz Rico
     </h2>
+    <h1 id="bannerSubtitle" class="bannerSubtitle">
+      // Design Portfolio
+    </h1>
+    <p id= "contact" class="contact">
+      Call or Text: 951.514.5050<br>Email: cruzrico4@gmail.com
+    </p>
   </div>
 
-  <!-- NAVBAR HTML -->
-  <div id="pfNavBar" class="pfNavBar flex-box">
+  <div  class="page">
+    <div class="fill">
+    </div>
 
-    <div id="navElement1" onclick="window.location='html/photography.html';" class="pfNavElement">
-      <h1 id=navTitle1 class="navTitle">
-        Web and Apps
+    <div class="bodyText">
+      <h1 class="sectionTitle">
+        &lt;Overview&gt;&nbsp;&nbsp;&nbsp;// Welcome to my portfolio!
+      </h1>
+      <div>
+        <p>
+          This website is a showcase of projects I've both contributed to and
+          created entirely by myself. Consider it an archive of lessons and
+          skills I've learned through UX design.
+        </p>
+        <p>
+          The menu button on the top left will show you a list of UX projects I
+          have taken on, as well as detailed analyses of what I learned from
+          them as a designer.
+        </p>
+
+        <h1 class="sectionTitle">
+          &lt;/Overview&gt;
+        </h1>
+      </div>
+
+    <div class="divider"></div>
+
+    <h1 class="sectionTitle">
+      &lt;My Experience In User/Human Centered Design&gt;
+    </h1>
+    <div>
+      <p>
+        I graduated from University of California San Diego in 2019 with a
+        bachelor's degree in Cognitive Science with Specialization in Human
+        Computer Interaction.
+      </p>
+      <p>
+        That's a mouthfull, I know.
+      </p>
+      <p>
+        My schoolwork largely involved working with other students to identify
+        breakdowns that people encounter in their daily lives, and develop
+        solutions to address those problems over the course of the class quarter.
+      </p>
+      <p>
+        All of the solutions we developed were ideated from real world research
+        of the actual people we were developing for. Much of our work used the
+        concept of Human Centered Design; we would sit down with people, talk to
+        them, and observe them working in the environments relevant to our projects
+        in order to figure out a solution that worked best for them.
+      </p>
+      <p>
+        We would then look over our data together and brainstorm ideas that could
+        potentially address any breakdowns our people of interest were experiencing.
+        These ideas then became prototypes, which we iterated repeatedly, constantly
+        refining our product (which was sometimes software, a website, or a physical
+        object) until we ended up with a final version that we were proud of and
+        felt would best improve the lives of people we were designing for.
+      </p>
+
+      <h1 class="sectionTitle">
+        &lt;/My Experience&gt;
       </h1>
     </div>
 
-    <div id="navElement2" onclick="window.location='html/photography.html';" class="pfNavElement">
-      <h1 id=navTitle2 class="navTitle">
-        Photography
-      </h1>
-    </div>
-
-    <div id="navElement3" class="pfNavElement navElement3">
-      <h1 id=navTitle3 class="navTitle">
-        Graphic Design
-      </h1>
     </div>
 
   </div>
-  <!-- END NAVBAR HTML -->
-
+  <a href="#top" class="top_arrow" title="Back to top"><img id="top_arrow" class="top_arrow" src="" ></img></a>
+  <!-- END MAIN PAGE HTML -->
+<!--
   <style>
     .pfNavBar {
        flex-wrap:wrap;
     }
   </style>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/portfolio.js"></script>
+-->
 
   </body>
   </html>

@@ -1,103 +1,388 @@
+/*!DOCTYPE css*/
+
 :root {
-  --pg-color:black;
-  --prm-color:white;
-  --sec-color:yellow;
-  --ter-color:purple;
-  --txt-color:white;
-  --people;
-  --places;
-  --animals;
-  --things;
+  --pg-color:white;
+  --prm-color:#F8BD44;
+  --sec-color:#FFCE69;
+  --ter-color:#FFDC93;
+  --txt-color:black;
+  /* body size */
+  --b1: 1.618rem;
+  /* sub-font size */
+  --s1: calc(var(--b1)/2);
+  /* header 1 size */
+  --h1: calc(var(--b1)*1.25);
+  /* header 2 size */
+  --h2: calc(var(--b1)*1.5);
+  /* header 3 size */
+  --h3: calc(var(--b1)*1.75);
+}
+
+@media screen and (min-width: 320px) {
+  html{
+    font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  html{
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-height: 850px) {
+  .menuIconContainer {
+    height: 60px;
+  }
 }
 
 @font-face {
-  font-family:"comfortaa";
-  src:url('../fonts/comfortaa/Comfortaa-Bold.ttf');
+  font-family:"Roboto-Light";
+  src:url('C:/Users/Cruz/Desktop/Portfolio/fonts/Roboto/Roboto-Light.ttf') format('truetype');
 }
 
-html {
-  font-family:serif;
+@font-face {
+  font-family: "Roboto-Bold";
+  src:url('C:/Users/Cruz/Desktop/Portfolio/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
 }
 
 body {
-  height:3000px;
-  background-color: var(--pg-color);
+  font-size: var(--b1);
+  background-color: black;
   overflow-y:auto;
+  margin:0;
+  font-family:Roboto-Light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: rgba(0,0,0,.1) 0 0 1px;
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+#drawer {
+  display:block;
+  position: fixed;
+  height:100%;
+  width:100%;
+  top:0;
+  z-index: -1;
+  background-color: rgb(0,0,0,0);
+  /* transition: .5s; */
+  overflow:hidden;
+  backdrop-filter: blur(5px);
+}
+/*
+.back {
+  z-index:-1;
+  transition: z-index .1s .5s !important;
+}
+
+.front {
+  z-index:10;
+  transition: z-index .5s .1s !important;
+} */
+
+.listContainer {
+  display: flex;
+  position:relative;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  left:-1000px;
+  margin-left: 20px;
+  height:100%;
+  width:auto;
+}
+
+.listContainer .sectionTitle {
+  color: white;
+  display:none;
+}
+
+
+.listButton {
+  height:20vh;
+  display:none;
+  width:38.2vw;
+  border: 4px solid white;
+  background-color: rgb(0,0,0,.5);
+  z-index:5;
+  border-radius:25px;
+}
+
+.listButton:hover {
+  background-color: rgb(100,100,100,.5)
+}
+
+.headerContainer {
+  display: none;
+  height: 5vh;
+  margin-bottom: 10px;
+}
+
+.listTitle {
+  font-family: "Roboto-Bold";
+  padding-bottom: 10px;
+  height:5vh;
+  border-bottom: 2px solid white;
+}
+
+.closeBox{
+  width:5vh;
+  height:5vh;
+  position: fixed;
+  display: none;
+  top:0;
+  right:0;
+  margin:10px 50px 0 0;
+  z-index:3;
+  vertical-align: middle;
+  text-align: center;
+}
+.close {
+  display: inherit;
+  font-family: "Roboto-Bold";
+  color:white;
+  height:5vh;
+  position: relative;
+  right:1000px;
+  margin:0;
+  vertical-align: middle;
+  transition:transform .2s;
+}
+
+.close.transform {
+  transform: rotate(-180deg) scale(1.5);
+  cursor: default;
+  transform-origin:center center;
+  transition: .2s;
 }
 
 .pfBanner {
   display:block;
   overflow:hidden;
-  height:200px;
-  width:100%;
+  position: absolute;
+  z-index:-1;
 }
 
 .bannerImage {
+  height:100%;
+  filter: blur(4px);
+  transform:translate(-10px, -10px);
+  background-position: center;
+  scroll-behavior: smooth;
+  position:fixed;
+  top: 0px;
+  z-index:-1;
+}
+
+.menuIconContainer{
   width:100%;
-  z-index: 0;
+  height: 5vh;
+  position: sticky;
+  display: flex;
+  top:0;
+  padding: 5px 0 5px 0;
+  z-index:3;
+  backdrop-filter: blur(10px);
+  vertical-align: middle;
+  mix-blend-mode: difference;
+  border-bottom: solid 2px white;
+}
+
+.iconContainer {
+  display: inline;
+  height:80%;
+  position:relative;
+  z-index: 1;
+  top:5%;
+  margin: 0 0 0 20px;
+  vertical-align: middle;
+}
+
+.menuIcon {
+  height: 100%;
+  width:100%;
+  display: inline-block;
+  position:relative;
+  width:auto;
+  left:0;
+  vertical-align: middle;
+  mix-blend-mode: difference;
+  transition: ease .1s;
+}
+
+.iconContainer:hover > .menuIcon {
+  transform: rotate(180deg);
+  transition: ease .3s;
+}
+
+.tipContainer {
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+  width:50%;
+  vertical-align: middle;
+}
+
+.menuTip {
+  color: white;
+  display: inline;
+  position: relative;
+  left: -500px;
+  top:10%;
+  width:50vw;
+  z-index:1;
+}
+
+#bannerWords {
+  font-family: 'Roboto-Bold';
+  padding: 0px 100px 10px 20px;
+  width:calc(38.2vw - 120px);
+  position: sticky;
+  top:0;
+  z-index:1;
+  color: white;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  mix-blend-mode: difference;
 }
 
 .bannerTitle {
-  /*font-family:comfortaa;*/
-  position: absolute;
+  margin: 80px 0 10px 0;
   pointer-events: none;
-  font-size:40pt;
-  text-align: center;
-  color:var(--txt-color);
-  text-shadow: 0px 0px 2px black;
-  top:20px;
-  margin: 10px;
-  z-index: 2;
+  color:inherit;
 }
 
 .bannerSubtitle {
-  position:absolute;
-  top: 80px;
-  display: block;
+  margin: 10px 0 10px 0;
   pointer-events: none;
-  font-size:30pt;
-  text-align: center;
-  color:var(--txt-color);
-  text-shadow: 0px 0px 2px black;
-  margin: 10px;
+  color:inherit;
 }
 
-.pfNavBar {
+.contact {
+  font-family: 'Roboto-Light';
+  border-top: 2px solid white;
+  padding-top: 10px;
+  margin: 10px 0 10px 0;
+  color: inherit;
+}
+
+#idiv {
+  position: relative;
+  height:85vh;
+  width:85vw;
+}
+
+#darken {
+  position:absolute;
+  padding:50px;
+  height:100%;
+  width:100%;
+  z-index:1;
+  /*background-color: black;*/
+}
+
+
+.webFrame {
   position: sticky;
   top:0px;
-  display: inline-flex;
-  vertical-align: top;
-  height:1vh;
+  height:100%;
   width:100%;
-  overflow: visible;
-  transition:0.2s;
+  transform:scale(.8);
+  border-radius: 3px;
+  border-color: black;
+
 }
 
-
-
- #navElement1 {
-    background-image: url("https://images.unsplash.com/photo-1514626585111-9aa86183ac98?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=03cd3fb1b6738fa69c358d927f890461&w=1000&q=80");
+.page {
+  display:flex;
+  align-items: flex-start;
+  border-right: white solid;
+  /* right: -2rem; */
+  /* background-color: var(--pg-color); */
+  height:100rem;
+  /* top:200px; */
+  z-index: 1;
 }
 
- #navElement2 {
-    background-image: url("https://www.glenstone.org/wp-content/uploads/2018/07/AV_Landscape-Hero-Contour-2993-1276x800.jpg");
+ .fill{
+  position:relative;
+  padding:0 100px 0 20px;
+  height:100rem;
+  width:calc(38.2vw - 120px);
+  background-color: white;
 }
 
- #navElement3 {
-    background-image: url("https://www.rspcansw.org.au/wp-content/uploads/2017/04/7_a-feature_adopt_mobile-1.jpg");
+.bodyText {
+  width: 61.8vw;
+  height:100rem;
+  position: relative;
+  padding: 10px 50px 10px 50px;
+  background-color: white;
+  color: black;
 }
 
- #navElement4 {
-    background-image: url("http://maxsukhomlin.com/wp-content/uploads/2016/09/object_photography_watches_16_MaxSukhomlin.com_.jpg");
+.sectionTitle {
+  margin: 10px 0 10px 0;
+  color: inherit;
 }
 
-.pfNavElement {
-  cursor:pointer;
+.top_arrow {
+  z-index: 3;
+  pointer-events: none;
+  cursor: pointer;
+  height:15vw;
+  width:100%;
+  max-height:80px;
+  max-width:80px;
+  position:fixed;
+  align-self: center;
+  left:10px;
+  bottom:10px;
+  transition: .2s;
+}
+
+.divider {
+  background: black;
+  height:2px;
+  width:100%;
+  margin: 40px 0 40px 0;
+}
+
+/*Currently unused, but might use later*/
+{
+/*
+
+  .pfNavBar {
+    position: sticky;
+    top:0px;
+    display: inline-flex;
+    vertical-align: top;
+    height:50px;
+    width:100%;
+    transition:0.2s;
+    z-index: 1;
+  }
+
+ .pfNavElement {
   flex-basis:100%;
+  font-size:.5vw;
   top:0px;
   align-self:flex-start;
   position: relative;
-  height:80px;
+  height:50px;
   vertical-align: top;
   overflow:hidden;
   border: 1px black solid;
@@ -105,58 +390,46 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-color: var(--prm-color);
+  text-decoration-color: var(--txt-color);
+  overflow-x: visible;
 }
 
-.pfNavElement:before {
-  content: ' ';
-  z-index:1;
-  left:0;
-  top:0;
-  display:block;
-  position:absolute;
-  height:100%;
-  width:100%;
-  opacity:.7;
-  background:black;
-  transition:.2s;
-}
 .pfNavElement:hover {
-  height:300px;
+  height:150px;
+  cursor: pointer;
+  background-image: linear-gradient(var(--sec-color), var(--prm-color));
+  transition:.2s ease;
 }
-.pfNavElement:hover:before{
-  opacity:0;
+
+.pfNavElement:hover .navTitle {
+  text-decoration: underline;
+  text-decoration-color: var(--txt-color);
+  width:61.8%;
+  left:10px;
+  overflow: visible;
+  transition: .2s ease;
 }
 
 .navTitle {
-  /*font-family:comfortaa;*/
+  cursor: pointer;
   position:relative;
-  display: block;
   top:0;
-  font-size: 30pt;
-  vertical-align: center;
   text-align: center;
   color:var(--txt-color);
-  text-shadow: 0px 0px 2px black;
-  margin-left: 10px;
-  z-index: 2;
+  margin-top:.1em;
+  left:1%;
+  width:0;
+  white-space: nowrap;
+  overflow: visible;
+  transition: .2s ease;
 }
 
-.page {
-  height:100%;
-  width:100%;
-  top:1px;
-  display:flex;
-}
-
-.top_arrow {
-  pointer-events: none;
-  cursor: pointer;
-  height:15vw;
-  width:15vw;
-  max-height:80px;
-  max-width:80px;
-  position:sticky;
-  align-self: center;
-  bottom:1px;
-  transition: .2s;
+.navList {
+  font-size: var(--s1);
+  text-align: left;
+  margin-top:5px;
+  color: var(--txt-color);
+  padding-left: 14.6%;
+} */
 }
