@@ -18,9 +18,9 @@ $(document).ready(function(){
         }
     });
     if(location.pathname.split("/").slice(-1) == "index.html")
-      document.getElementById("top_arrow").src = "../images/top_arrow.png";
+      document.getElementById("top_arrow").src = "./images/top_arrow.png";
     else {
-      document.getElementById("top_arrow").src = "../images/top_arrow.png";
+      document.getElementById("top_arrow").src = "./images/top_arrow.png";
     }
 
     $("#top_arrow").click(function(){
