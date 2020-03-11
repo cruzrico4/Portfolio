@@ -22,7 +22,7 @@ $(document).ready(function(){
         $("html, body").animate({ scrollTop: 0 }, 500);
         return false;
     });
-    document.getElementById("top_arrow").src = "./images/top_arrow.PNG";
+    document.getElementById("top_arrow").src = "./images/top_arrow.png";
 });
 
 $(document).ready(function($){
