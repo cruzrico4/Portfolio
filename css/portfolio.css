@@ -145,13 +145,14 @@ h3 {
   display: none;
   top:0;
   right:0;
-  margin:10px 50px 0 0;
+  margin:2px 50px 0 0;
   z-index:3;
-  /*vertical-align: middle;*/
+  vertical-align: middle;
   text-align: center;
 }
 .close {
   display: inherit;
+  padding-bottom:15px;
   font-family: "Roboto-Bold";
   color:white;
   height:5vh;
@@ -159,6 +160,7 @@ h3 {
   right:1000px;
   margin:0;
   vertical-align: middle;
+  text-align: center;
   transition:transform .2s;
 }
 
@@ -319,7 +321,7 @@ h3 {
 
  .fill{
   position:relative;
-  padding:0 100px 0 20px;
+  padding:20px 100px 0 20px;
   height:100rem;
   width:calc(38.2vw - 120px);
   background-color: white;
@@ -331,6 +333,7 @@ h3 {
   position: relative;
   padding: 10px 50px 10px 50px;
   background-color: white;
+  overflow:auto;
   color: black;
 }
 

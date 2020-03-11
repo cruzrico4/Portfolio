@@ -25,10 +25,11 @@ $(document).ready(function(){
     document.getElementById("top_arrow").src = ".\\images\\top_arrow.png";
 });
 
+//set correct height for banner to take up on page load
 $(document).ready(function($){
     $("#bannerWords").each(function(){
         $(this).css({
-            "margin-top" : (.618 * window.innerHeight) - $(this).outerHeight() + "px"
+            "margin-top" : (window.innerHeight) - $(this).outerHeight() - $(".menuIconContainer").outerHeight() + "px"
         });
     });
 });
