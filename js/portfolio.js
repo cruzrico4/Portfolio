@@ -72,31 +72,50 @@ $(document).ready(function(){
 });
 
 //Click darkness of ".listContainer" or "X" to close Projects List
+//Also handles clicking list buttons to see detail
 $(document).ready(function(){
-  $(".listContainer").click(function(){
-    var drawer = $("#drawer");
-    var listContainer = $("#listContainer");
-    var page = $(".page");
-    var x = $(".close");
 
-    fadeChildren();
-    drawer.animate({
-      backgroundColor: "rgb(0,0,0,0)",
-    },100);
-    listContainer.animate({
-      left: "-1000px"
-    },100)
-    x.animate({right:"1000px"},100);
-    drawer.animate({
-      zIndex:"-1"
-    },1);
-    page.animate({
-      borderRightWidth: "0px",
-      borderRightStyle: "solid",
-      borderRightColor: "white"
-    },1)
-    $("body").css("overflow","visible");
+  var drawer = $("#drawer");
+  var listContainer = $("#listContainer");
+  var page = $(".page");
+  var x = $(".close");
+
+  $(".listButton").click(function(e){
+    $(".listButton").animate({
+      width: "20vw"
+    }, 100,"swing");
+    $("#listContainer").animate({
+      paddingRight: "60vw"
+    }, 100, "swing")
+    $("#projectContainer").animate({
+      display: "block",
+      height: "100%",
+      width: "60vw"
+    })
   });
+
+  $(document).on("click", ".listContainer", function(e){
+    if(!($(e.target).hasClass("listButton"))){
+      fadeChildren();
+      drawer.animate({
+        backgroundColor: "rgb(0,0,0,0)",
+      },100);
+      listContainer.animate({
+        left: "-1000px"
+      },100)
+      x.animate({right:"1000px"},100);
+      drawer.animate({
+        zIndex:"-1"
+      },1);
+      page.animate({
+        borderRightWidth: "0px",
+        borderRightStyle: "solid",
+        borderRightColor: "white"
+      },1)
+      $("body").css("overflow","visible");
+    }
+  });
+
 });
 
 function fadeChildren(){
@@ -138,6 +157,19 @@ $(document).ready(function(){
 });
 
 $(".page").css({"overflow":"hidden",'position':'fixed'});
+
+//Menu list item listeners to show more detail
+$(document).ready(function(){
+  $(".listButton").click(function(){
+    $(".listButton").animate({
+      width: "20vw"
+    }, 100,"swing");
+    $("#listContainer").animate({
+      alignItems: "left"
+    })
+  });
+});
+
 // function changeColor() {
 //   console.log(window.pageYOffset);
 //
