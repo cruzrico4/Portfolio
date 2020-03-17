@@ -66,6 +66,12 @@ $(document).ready(function(){
     listContainer.animate({
       left: "0px"
     },200);
+    $("#projectContainer").animate({
+      left: "20px + 15vw"
+    }, {duration:100, queue: false});
+
+    $("#projectContainer").css("right", "5vw");
+
     x.animate({right:"0px"},200);
     fadeChildren();
   });
@@ -80,22 +86,55 @@ $(document).ready(function(){
   var page = $(".page");
   var x = $(".close");
 
-  $(".listButton").click(function(e){
+  //Clicking on a listButton will shrink them, and move them to the left
+  $(document).on("click", ".listButton", function(e){
     $(".listButton").animate({
-      width: "20vw"
-    }, 100,"swing");
+      width: "15vw"
+    }, {duration:100, queue: false});
     $("#listContainer").animate({
-      paddingRight: "60vw"
-    }, 100, "swing")
+      paddingRight: "80vw"
+    }, {duration:100, queue: false})
     $("#projectContainer").animate({
-      display: "block",
-      height: "100%",
-      width: "60vw"
-    })
+      height: "80vh",
+      width: "70vw",
+      outlineWidth: "2px",
+    }, {duration:100, queue: false});
+
+    $("#projectContainer").css("right", "5vw");
+
+    // get an array of classes on clicked element
+    var classes = $(this).attr("class").split(/\s+/);
+    console.log(classes[1]);
+    //get [1] item in class list to identify button clicked, and show info
+    switch(classes[1]) {
+      case "item1":
+        $("#info1").css("display", "block");
+        $("#info2").css("display", "none");
+        $("#info3").css("display", "none");
+        break;
+      case "item2":
+        $("#info1").css("display", "none");
+        $("#info2").css("display", "block");
+        $("#info3").css("display", "none");
+        break;
+      case "item3":
+        $("#info1").css("display", "none");
+        $("#info2").css("display", "none");
+        $("#info3").css("display", "block");
+        break;
+    }
+    //Show detail for button clicked
+    // $(document).on("click", ".listButton, listImage", function(e) {
+    //   console.log("clicked");
+    //   //get an array of classes on clicked element
+    //   var classes = $(this).className.split(/\s+/);
+    //   console.log(classes);
+    // })
   });
 
+  //Clicking anything but a button will close the drawer
   $(document).on("click", ".listContainer", function(e){
-    if(!($(e.target).hasClass("listButton"))){
+    if(!($(e.target).hasClass("listButton")) && !($(e.target).hasClass("listImg"))){
       fadeChildren();
       drawer.animate({
         backgroundColor: "rgb(0,0,0,0)",
@@ -111,7 +150,10 @@ $(document).ready(function(){
         borderRightWidth: "0px",
         borderRightStyle: "solid",
         borderRightColor: "white"
-      },1)
+      },1);
+      $("#projectContainer").css({
+        right: "-5000px"
+      });
       $("body").css("overflow","visible");
     }
   });
@@ -120,6 +162,9 @@ $(document).ready(function(){
 
 function fadeChildren(){
   $(".listContainer").children().fadeToggle();
+  $(".listButton").each(function(){
+    $(this).css("display","flex");
+  });
   $(".closeBox").css("display","inline-block");
 }
 
@@ -144,7 +189,7 @@ $(document).ready(function(){
   var x = $(".close");
   $(".closeBox").mouseenter(function(){
     x.animate({
-      transform: "rotate(180deg)",
+      // transform: "rotate(180deg)",
       color: "#e06c75"
     },100,"swing").delay(100).toggleClass("transform");
   });
@@ -169,6 +214,11 @@ $(document).ready(function(){
     })
   });
 });
+
+//Hover listeners for listButtons
+// $(document).on("mouseenter", ".listButton, .listImg", function(e) {
+//   console.log(e);
+// });
 
 // function changeColor() {
 //   console.log(window.pageYOffset);
