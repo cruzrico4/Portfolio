@@ -93,6 +93,16 @@ h3 {
   transition: z-index .5s .1s !important;
 } */
 
+.infoImg {
+  height:15rem;
+  width:auto;
+  padding: 1%;
+}
+
+/* #PamphletSketch {
+  height:40rem;
+} */
+
 .listContainer {
   display: flex;
   position:relative;
@@ -144,6 +154,7 @@ h3 {
 #projectContainer {
   position:absolute;
   outline: 0px solid white;
+  background-color: rgb(0,0,0,.5);
   top:10vh;
   right:5vw;
   height:80vh;
@@ -152,10 +163,12 @@ h3 {
 
 .info {
   position:relative;
+  color: white;
+  padding: 0 0 1% 1%;
   display:none;
-  height:1000px;
-  width:100%;
-  background-color: white;
+  /* height:1000px; */
+  width:99%;
+  /*background-color: white;*/
 }
 
 .headerContainer {
@@ -261,14 +274,12 @@ h3 {
   align-items: center;
   max-width:calc(76.4vw - 120px);
   height:90vh;
-  overflow: visible;
   z-index:2;
 }
 
 #resumePDF {
   height:90%;
   width:90%;
-  overflow:visible;
 }
 
 .menuIconContainer{
