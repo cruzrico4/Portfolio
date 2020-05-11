@@ -104,7 +104,7 @@ $(document).ready(function(){
 
     // get an array of classes on clicked element
     var classes = $(this).attr("class").split(/\s+/);
-    
+
     //get [1] item in class list to identify button clicked, and show info
     switch(classes[1]) {
       case "item1":
@@ -214,6 +214,11 @@ $(document).ready(function(){
     })
   });
 });
+
+
+$(document).ready(function(){
+  
+})
 
 //Hover listeners for listButtons
 // $(document).on("mouseenter", ".listButton, .listImg", function(e) {
