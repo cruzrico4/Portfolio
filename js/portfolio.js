@@ -4,7 +4,7 @@ $(document).ready(function(){
 var firebaseConfig = {
   apiKey: "AIzaSyBMNFSf5TUGwsZhf4FBbUWmMV3LLmj4n4A",
   authDomain: "website-hit-logger.firebaseapp.com",
-  databaseURL: "https://project-id.firebaseio.com",
+  databaseURL: "https://website-hit-logger.firebaseio.com",
   projectId: "website-hit-logger",
   storageBucket: "website-hit-logger.appspot.com",
   messagingSenderId: "1085379599357",
