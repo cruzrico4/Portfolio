@@ -232,7 +232,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 
-})
+});
 
 //Hover listeners for listButtons
 // $(document).on("mouseenter", ".listButton, .listImg", function(e) {
