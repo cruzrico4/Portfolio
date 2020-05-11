@@ -10,7 +10,7 @@ var firebaseConfig = {
   messagingSenderId: "1085379599357",
   appId: "1:1085379599357:web:bd3f2a199177564b091794",
   measurementId: "G-measurement-id",
-};
+});
 
 
 //var timer = setInterval(typeFlash, 10);
