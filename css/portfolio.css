@@ -326,7 +326,6 @@ h3 {
 .tipContainer {
   position:relative;
   display:inline-block;
-  overflow-x :hidden;
   width:50%;
   vertical-align: middle;
   /* z-index: 5; */
@@ -337,7 +336,7 @@ h3 {
   display: inline;
   position: relative;
   left: -500px;
-  top:10%;
+  /* top:10%; */
   width:50vw;
   z-index:1;
 }
