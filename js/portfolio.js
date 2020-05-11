@@ -11,6 +11,7 @@ $(document).ready(function(){
     appId: "1:1085379599357:web:bd3f2a199177564b091794",
     measurementId: "G-H1JTZJFNPN"
   };
+  firebase.analytics();
 });
 
 
