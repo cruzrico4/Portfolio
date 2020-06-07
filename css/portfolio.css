@@ -340,6 +340,25 @@ h3 {
   width:50vw;
 }
 
+.menuItemContainer {
+  position:relative;
+  display:flex;
+  left: 100px;
+  margin-top: 5px;
+}
+
+.menuItem {
+  color: #E8E8E8;
+  position: relative;
+  cursor: pointer;
+  left: 20px;
+  margin: 0px 0px 0px 20px;
+}
+
+.menuItem:hover {
+  color: white;
+}
+
 #bannerWords {
   font-family: 'Roboto-Bold';
   padding: 0px 1000px 10px 20px;
