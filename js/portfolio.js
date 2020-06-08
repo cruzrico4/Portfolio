@@ -39,6 +39,18 @@ $(document).ready(function(){
         return false;
     });
     document.getElementById("top_arrow").src = ".\\images\\top_arrow.png";
+
+
+
+});
+
+window.addEventListener("resize", function(){
+  // Listen to width to set content of elements that might overlap
+  if($(window).width() < 1075)
+    document.getElementById("contact").innerHTML = "Call or Text: 951.514.5050<br>Email: CruzRico4<br>@gmail.com"
+  // If window is larger than the minimum, set content back to normal
+  else
+      document.getElementById("contact").innerHTML = "Call or Text: 951.514.5050<br>Email: CruzRico4@gmail.com"
 });
 
 //set correct height for banner to take up on page load
