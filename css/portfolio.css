@@ -74,6 +74,10 @@ p {
   line-height: calc(32px + 6 * ((100vw - 320px) / 680));
 }
 
+.LinkedIn {
+  filter: invert();
+}
+
 #drawer {
   display:block;
   position: fixed;
