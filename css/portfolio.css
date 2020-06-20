@@ -20,7 +20,7 @@
 
 @media screen and (min-width: 320px) {
   html{
-    font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(12px + 6 * ((80vw - 320px) / 680));
   }
 }
 
