@@ -431,9 +431,10 @@ p {
 
 .page {
   display:flex;
+  height:100%;
   align-items: flex-start;
   border-right: white solid;
-  max-height:9000px;
+  max-height:90000px;
   overflow: visible;
   z-index: 5;
   background-color: white;
@@ -449,11 +450,11 @@ p {
 
 .bodyText {
   width: 61.8vw;
-  height:100rem;
+  height:100%;
   position: relative;
   padding: 10px 50px 10px 50px;
   background-color: white;
-  overflow:visible;
+  overflow: visible;
   color: black;
 }
 
