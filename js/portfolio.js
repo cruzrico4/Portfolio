@@ -38,7 +38,12 @@ $(document).ready(function(){
         $("html, body").animate({ scrollTop: 0 }, 500);
         return false;
     });
-    document.getElementById("top_arrow").src = ".\\images\\top_arrow.png";
+    //gets the correct directory depth for top arrow image
+    if(window.location.href.substr(window.location.href.lastIndexOf("/")) == "/index.html")
+      document.getElementById("top_arrow").src = ".\\images\\top_arrow.png";
+    else {
+      document.getElementById("top_arrow").src = "..\\images\\top_arrow.png";
+    }
 
 
 
@@ -53,13 +58,26 @@ window.addEventListener("resize", function(){
       document.getElementById("contact").innerHTML = 'Call or Text: 951.514.5050<br>Email: CruzRico4@gmail.com<br>LinkedIn: <a class="LinkedIn" href="https://www.linkedin.com/in/cruzrico-ux/">linkedin.com/in/cruzrico-ux/</a>'
 });
 
-//set correct height for banner to take up on page load
+// Set correct height for banner to take up on page load
 $(document).ready(function($){
     $("#bannerWords").each(function(){
         $(this).css({
             "margin-top" : (window.innerHeight) - $(this).outerHeight() - $(".menuIconContainer").outerHeight() + "px"
         });
     });
+});
+
+// Set correct height for banner to take up on page resize
+$(function () {
+    updateTopMargin();
+    $(window).resize(updateTopMargin);
+    function updateTopMargin() {
+        $('#bannerWords').each(function () {
+            $(this).css({
+                "margin-top" : (window.innerHeight) - $(this).outerHeight() - $(".menuIconContainer").outerHeight() + "px"
+            });
+        });
+    }
 });
 
 window.addEventListener("scroll", function() {
@@ -229,7 +247,8 @@ $(document).ready(function(){
   });
 });
 
-$(".page").css({"overflow":"hidden",'position':'fixed'});
+//I don't know why this would have been here, but in case it's crucial I'm just commenting it out
+// $(".page").css({"overflow":"hidden",'position':'fixed'});
 
 //Menu list item listeners to show more detail
 $(document).ready(function(){

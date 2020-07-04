@@ -46,6 +46,7 @@
   src:url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype');
 }
 
+
 body {
   font-size: var(--b1);
   background-color: black;
@@ -293,7 +294,8 @@ p {
 
 .menuIconContainer{
   width:100%;
-  height: 5vh;
+  /* height: 5vh; */
+  height: 50px;
   position: sticky;
   display: flex;
   top:0;
@@ -335,7 +337,7 @@ p {
 .tipContainer {
   position:relative;
   display:inline-block;
-  width:50%;
+  width:85rem;
   vertical-align: middle;
   /* z-index: 5; */
 }
@@ -352,19 +354,28 @@ p {
 .menuItemContainer {
   position:relative;
   display:flex;
-  left: 100px;
-  margin-top: 5px;
+  /* left: 100px; */
+  margin: 5px 20px 0 0;
 }
 
-.menuItem {
+.menuItem > a {
+  font-size: 20pt;
   color: #E8E8E8;
   position: relative;
-  cursor: pointer;
-  left: 20px;
-  margin: 0px 0px 0px 20px;
+  text-decoration: none;
+  padding-left: 20px;
+  font-weight: 100;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.menuItem.selected > a {
+  font-family: Roboto-Bold;
+  font-weight: 900;
+  color: white;
 }
 
-.menuItem:hover {
+.menuItem > a:hover {
+  cursor: pointer;
   color: white;
 }
 
@@ -440,6 +451,10 @@ p {
   background-color: white;
 }
 
+.page.gdPage {
+  background-color: rgb(255,255,255);
+}
+
  .fill{
   position:relative;
   padding:20px 100px 0 20px;
@@ -493,6 +508,45 @@ p {
   width: 100%;
   height: 100%;
   /* padding-bottom: 100%; */
+}
+
+/* Used in Graphic Design page */
+.imageContainerColumn {
+  display: table;
+  flex-direction: column;
+  width: 100%;
+}
+
+.imageContainerRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.imageContainer {
+  align-items: center;
+  background-color: white;
+  border: black solid 2px;
+  width: 30rem;
+  height: 30rem;
+  margin:2%;
+}
+
+.gdImage {
+  display: block;
+  height:60%;
+  width:auto;
+  margin: 5% auto 5% auto;
+}
+
+.gdDescription {
+  font-size: var(--b1);
+  text-align: center;
+}
+
+.pageTitle.gdTitle {
+  padding-left:10rem;
 }
 
 /*Currently unused, but might use later*/
