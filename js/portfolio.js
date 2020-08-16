@@ -40,9 +40,9 @@ $(document).ready(function(){
     });
     //gets the correct directory depth for top arrow image
     if(window.location.href.substr(window.location.href.lastIndexOf("/")) == "/index.html")
-      document.getElementById("top_arrow").src = ".\\images\\top_arrow.png";
+      document.getElementById("top_arrow").src = ".\\images\\top_arrow.webp";
     else {
-      document.getElementById("top_arrow").src = "..\\images\\top_arrow.png";
+      document.getElementById("top_arrow").src = "..\\images\\top_arrow.webp";
     }
 
 
