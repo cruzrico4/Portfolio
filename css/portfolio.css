@@ -498,7 +498,7 @@ p {
   background: black;
   height:2px;
   width:100%;
-  margin: 40px 0 40px 0;
+  /* margin: 40px 0 40px 0; */
 }
 
 .frame {
@@ -527,30 +527,39 @@ p {
 .imageContainer {
   align-items: center;
   background-color: white;
-  border: black solid 2px;
-  width: 30rem;
-  height: 30rem;
-  margin:2%;
+  /* border: black solid 2px; */
+  width: auto;
+  height: 20rem;
+  margin: 10% 20% 10% 20%;
+}
+
+.gdTable {
+  margin: 0 auto 0 auto;
 }
 
 .gdImage {
   display: block;
-  height:60%;
+  height:100%;
   width:auto;
   margin: 5% auto 5% auto;
 }
 
 .gdDescription {
   font-size: var(--b1);
-  text-align: center;
+  padding: 20px 0 10px 0;
+
 }
 
 .pageTitle.gdTitle {
+  padding-top:20px;
+  padding-bottom:20px;
   padding-left:10rem;
+  margin:0;
+  font-size: var(--h1);
+  background-color: lightblue;
 }
 
 /*Currently unused, but might use later*/
-{
 /*
 
   .pfNavBar {
@@ -620,4 +629,3 @@ p {
   color: var(--txt-color);
   padding-left: 14.6%;
 } */
-}

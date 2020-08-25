@@ -39,8 +39,9 @@ $(document).ready(function(){
         return false;
     });
     //gets the correct directory depth for top arrow image
-    if(window.location.href.substr(document.getElementsByTagName("TITLE")[0].text.includes("Home")))
+    if(document.getElementsByTagName("TITLE")[0].text.includes("Home")) {
       document.getElementById("top_arrow").src = ".\\images\\top_arrow.webp";
+    }
     else {
       document.getElementById("top_arrow").src = "..\\images\\top_arrow.webp";
     }
@@ -51,11 +52,13 @@ $(document).ready(function(){
 
 window.addEventListener("resize", function(){
   // Listen to width to set content of elements that might overlap
-  if($(window).width() < 1075)
-    document.getElementById("contact").innerHTML = 'Call or Text: 951.514.5050<br>Email: CruzRico4<br>@gmail.com<br>LinkedIn: <a class="LinkedIn" href="https://www.linkedin.com/in/cruzrico-ux/">linkedin.com/in/<br>cruzrico-ux/</a>'
-  // If window is larger than the minimum, set content back to normal
-  else
-      document.getElementById("contact").innerHTML = 'Call or Text: 951.514.5050<br>Email: CruzRico4@gmail.com<br>LinkedIn: <a class="LinkedIn" href="https://www.linkedin.com/in/cruzrico-ux/">linkedin.com/in/cruzrico-ux/</a>'
+  if(document.getElementsByTagName("TITLE")[0].text.includes("Home")) {
+    if($(window).width() < 1075)
+      document.getElementById("contact").innerHTML = 'Call or Text: 951.514.5050<br>Email: CruzRico4<br>@gmail.com<br>LinkedIn: <a class="LinkedIn" href="https://www.linkedin.com/in/cruzrico-ux/">linkedin.com/in/<br>cruzrico-ux/</a>'
+    // If window is larger than the minimum, set content back to normal
+    else
+        document.getElementById("contact").innerHTML = 'Call or Text: 951.514.5050<br>Email: CruzRico4@gmail.com<br>LinkedIn: <a class="LinkedIn" href="https://www.linkedin.com/in/cruzrico-ux/">linkedin.com/in/cruzrico-ux/</a>'
+  }
 });
 
 // Set correct height for banner to take up on page load
