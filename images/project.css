@@ -1,0 +1,381 @@
+:root {
+	--pg-color:white;
+	--bg-color:"#39B6FF";
+	--clk-color:"#2678A9";
+	--grd-color:"#299BDF";
+	--txt-color:black;
+	--sec-txt-color:black;
+	--hvr-color:"#BAE5FF";
+}
+
+/* this style exists to make it obvious that you've successfully linked
+   the CSS to the page. feel free to remove it once the link is working. */
+html {
+	font-family:sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+			overflow: hidden;
+}
+
+a {
+	white-space: nowrap;
+}
+
+body {
+	background-color:var(--pg-color);
+	height: 100rem;
+}
+
+h1 {
+	font-size:36pt;
+	color:var(--txt-color);
+	text-align:center;
+	padding:8px;
+	margin:0px;
+	text-transform:capitalize;
+}
+
+h2 {
+	text-align:center;
+	color:var(--txt-color);
+	padding:8px;
+	margin:0px;
+}
+h3 {
+	color:var(--sec-txt-color);
+}
+
+figcaption {
+	font-size:12pt;
+	margin-top:5px;
+	color:var(--sec-txt-color);
+}
+
+text {
+	font-size: 16pt;
+	color:var(--txt-color);
+	padding: 8px;
+	margin: 0px;
+}
+
+#buttonContainer {
+	margin-top:50px;
+}
+
+.button {
+	cursor:pointer;
+	text-align: center;
+	text-transform: capitalize;
+	border: 1px black solid;
+	display:inline-block;
+	background-color: var(--bg-color);
+	margin:10px 10px 10px 10px;
+	background-image: linear-gradient(var(--bg-color), var(--grd-color));
+	color:var(--txt-color);
+}
+
+.button-small {
+	font-size:20px;
+	width: 150px;
+	border-radius: 5px;
+	padding:10px;
+}
+
+.button-large {
+	font-size:20pt;
+	width:350px;
+	border-radius: 10px;
+	padding:20px;
+}
+
+.button:hover {
+	color: var(--txt-color);
+	text-decoration: none;
+	background-color: var(--hvr-color);
+	background-image: linear-gradient(var(--hvr-color), var(--grd-color));
+}
+
+.button:active{
+	background-image: linear-gradient(var(--clk-color), var(--grd-color));
+}
+
+.topBar {
+	position:fixed;
+	border-bottom: black 2px solid;
+	z-index: 1;
+	height:60px;
+	width:100%;
+	transition:.3s;
+	background-color:var(--bg-color);
+}
+
+.sideMenu {
+	position:fixed;
+	border-right: black 2px solid;
+	height:100%;
+	width:0px;
+	z-index:1;
+	overflow-x:hidden;
+	transition:.3s;
+	padding-top:20px;
+	background-color:var(--bg-color);
+}
+
+.sideMenu .menuOption {
+	font-size:40px;
+	color:var(--txt-color);
+	white-space:nowrap;
+	text-decoration:none;
+	margin:5px 5px 5px 5px;
+	padding:0px 0px 0px 20px;
+	display:block;
+}
+
+.sideMenu .menuHeader {
+	position:absolute;
+	color:var(--txt-color);
+	margin:30px 5px 5px 5px;
+	padding:0px 50px 0px 10px;
+	font-size:40px;
+	white-space:nowrap;
+	text-decoration:none;
+}
+
+.sideMenu .menuOption:hover {
+	background-color:var(--hvr-color);
+}
+
+.sideMenu .closeButton {
+	position:absolute;
+	text-decoration:none;
+	top:-3px;
+	font-size:30px;
+	color:#000000;
+	right:10px;
+	cursor:pointer;
+}
+
+.icon {
+	position:relative;
+	cursor:pointer;
+	top:5px;
+	left:5px;
+	margin-right:10px;
+	width:50px;
+	height:50px;
+}
+
+.icon #homeButton {
+	margin-left:50px;
+	position:absolute;
+
+}
+
+.profileThumbnail {
+	width:70px;
+	height:70px;
+	margin:0px 0px 10px 10px;
+}
+
+.dropArrow {
+	height:20px;
+	width:20px;
+	margin-right:10px;
+	transition:.3s;
+}
+
+.dropMenu {
+	position:relative;
+	overflow:hidden;
+	height:0px;
+	top:-5px;
+	background-color: transparent;
+	transition:.3s;
+}
+
+.dropMenu .dropOption {
+	font-size:20px;
+	font-weight:normal;
+	color:var(--txt-color);
+	transition:.3s;
+	white-space:nowrap;
+	text-decoration:none;
+	margin:8px 5px 5px 5px;
+	padding:0px 0px 0px 5px;
+}
+
+.setting {
+	text-align: left;
+	margin-left: .8em;
+	color:var(--txt-color);
+	cursor:pointer;
+	padding-right:80px;
+}
+.setting :hover {
+	color:var(--hvr-color);
+}
+
+.divider {
+	background-color:var(--txt-color);
+	height:1px;
+	width:390px;
+	z-index:1;
+	overflow-x:hidden;
+	transition:.3s;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.title {
+	margin-top:60px;
+}
+
+.titleUnderline {
+	background-color:var(--txt-color);
+	height:1px;
+	width:300px;
+	margin-bottom:10px;
+}
+
+#profileUnderline {
+	width:500px;
+}
+
+.page {
+	background-color:var(--pg-color);
+	position:relative;
+	top:60px;
+	height: 100%;
+	overflow: hidden;
+}
+
+.pageItems {
+	position: relative;
+	text-align:center;
+	color:var(--txt-color);
+	padding: 0;
+}
+
+.toInstructions{
+	position: relative;
+	text-align: center;
+	margin-top:10px;
+	margin-bottom: 10px;
+	margin-left: 3%;
+	margin-right: 3%;
+	display: inline-block;
+	color:var(--txt-color);
+}
+
+.centeringBox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
+}
+
+.center{
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+.painMessage{
+	margin-right: 10px;
+}
+
+.jumbotron {
+	position: relative;
+	background: none;
+}
+
+.textField {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.jumbotron:after {
+     content:"";
+     background: url("http://lorempixel.com/1140/283");
+     opacity: 0.2;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     position: absolute;
+     z-index: -1;
+}
+
+/* Style the search box */
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style the navigation links */
+#myMenu li a {
+  background-color: #f6f6f6;
+	color: var(--sec-txt-color);
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+}
+
+#myMenu li a:hover {
+	color: var(--txt-color);
+  background-color: var(--hvr-color);
+	background-image: linear-gradient(var(--hvr-color), var(--grd-color));
+}
+
+#myMenu li a:active {
+	background-image: linear-gradient(var(--clk-color), var(--grd-color));
+}
+
+.flip {
+  transform: rotate(-180deg);
+}
+
+.drop {
+	margin: .8em;
+	height:auto;
+	background-color:var(--bg-color);
+}
+
+.iframe-container{
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%;
+}
+
+.iframe-container iframe{
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+}
+
+.ExDetail-descriptionSteps {
+	color:var(--txt-color);
+	font-size: 16pt;
+	margin-top: 10px;
+  margin-left: 3%;
+	margin-right: 3%;
+  padding-left: 1em;
+}
+
+.ExDetail-descriptionStep {
+    margin-bottom: .8em;
+}
